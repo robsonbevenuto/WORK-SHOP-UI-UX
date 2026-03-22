@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jampa Pet - Sobre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+
+        /* Header */
+        header {
+            background-color: #A6D8E7;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: #000;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav a {
+            padding: 12px 24px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        nav a.active {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: #FFF9F0;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+        }
+
+        /* About Content */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text {
+            border: 2px solid #000;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .about-text p strong {
+            color: #000;
+            display: block;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .about-image {
+            position: sticky;
+            top: 20px;
+            height: 600px;
+            background-color: #A6D8E7;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Work Section */
+        .work-section {
+            background-color: #FFF9F0;
+            padding: 80px 40px;
+        }
+
+        .work-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .work-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .work-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .work-icon {
+            background-color: #000;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            flex-shrink: 0;
+        }
+
+        .work-title h2 {
+            font-size: 40px;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        .work-image {
+            height: 400px;
+            background-color: #A6D8E7;
+            border-radius: 15px;
+        }
+
+        .work-text {
+            max-width: 800px;
+        }
+
+        .work-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .work-text ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .work-text ul li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .work-text ul li:before {
+            content: "• ";
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .value-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #A6D8E7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 48px;
+        }
+
+        .value-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #A6D8E7;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            background-color: #000;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .credits {
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .social-icon:hover {
+            background-color: #333;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-content,
+            .work-header {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image,
+            .work-image {
+                height: 300px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🐾</div>
+            <span class="logo-text">JAMPA PET</span>
+        </a>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="sobre.html" class="active">SOBRE</a>
+            <a href="servicos.html">SERVIÇOS</a>
+            <a href="produtos.html">PRODUTOS</a>
+            <a href="contato.html">CONTATO</a>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>SOBRE</h1>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="about-text">
+            <h2>SOBRE</h2>
+            <p>
+                A História da Jampa Pet começou há mais de 10 anos atrás quando decidimos dedicar nossa vida ao bem-estar dos animais.
+            </p>
+            <p>
+                Começamos como uma pequena loja de bairro e hoje somos referência em cuidados pet em toda a região, atendendo centenas de famílias que confiam em nós para cuidar de seus melhores amigos.
+            </p>
+            <p><strong>Nossa Missão e Valores</strong></p>
+            <p>
+                Na Jampa Pet, acreditamos que cada pet merece receber o melhor cuidado possível. Nossa equipe é formada por profissionais apaixonados e qualificados, dedicados a proporcionar um atendimento personalizado e de excelência.
+            </p>
+            <p><strong>Comprometidos com a Comunidade</strong></p>
+            <p>
+                Além de cuidar dos pets que nos visitam, também nos empenhamos em educar a comunidade sobre a importância de um cuidado responsável e amoroso com os animais. Realizamos palestras, workshops e campanhas para promover o bem-estar animal e conscientizar sobre adoção responsável.
+            </p>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work-section">
+        <div class="work-content">
+            <div class="work-header">
+                <div class="work-title">
+                    <div class="work-icon">🐾</div>
+                    <h2>TRABALHE<br>CONOSCO</h2>
+                </div>
+                <div class="work-image"></div>
+            </div>
+
+            <div class="work-text">
+                <p>Se dedicar à saúde dos animais já é incrível.</p>
+                <p>E fazer isso com pessoas que respiram o mesmo cuidado, brilho nos olhos e amor pelos animais é AINDA MELHOR.</p>
+                <p>A Jampa Pet busca pessoas com esses valores e atributos.</p>
+                <p>Envie seu currículo para contato@jampapet.com.br indicando no assunto para qual das seguintes vagas você gostaria de se candidatar:</p>
+                <ul>
+                    <li>Veterinário(a)</li>
+                    <li>Auxiliar de Veterinário</li>
+                    <li>Tosador(a)</li>
+                    <li>Banhista</li>
+                    <li>Vendedor(a)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">⏰</div>
+                <h3>Dedicação</h3>
+                <p>Comprometidos com o bem-estar de cada pet que atendemos</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⭐</div>
+                <h3>Qualidade</h3>
+                <p>Produtos e serviços de excelência para seu melhor amigo</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">❤️</div>
+                <h3>Amor</h3>
+                <p>Tratamos cada pet com carinho e respeito</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">🐾</div>
+                <div class="credits">
+                    <p><strong>Design Digital e Estudante de Bacharelado de Ciências da Computação</strong></p>
+                    <p>Robson Bevenuto</p>
+                    <p>Copyright @jampapet. Todos os direitos reservados.</p>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">📷</a>
+                <a href="#" class="social-icon">👍</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(20px)';
+                    entry.target.style.transition = 'all 0.6s ease';
+                    
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.value-card, .about-text, .work-text').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
